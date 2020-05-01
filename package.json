@@ -1,0 +1,63 @@
+{
+  "name": "tikui.org",
+  "version": "1.0.1",
+  "description": "Tikui Website",
+  "keywords": [
+    "ui",
+    "ui kit",
+    "design system",
+    "pattern library"
+  ],
+  "homepage": "https://www.tikui.org",
+  "bugs": {
+    "url": "https://github.com/tikui/tikui.org/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Anthony Rey"
+  },
+  "contributors": [
+    {
+      "name": "Hippolyte Durix"
+    },
+    {
+      "name": "Jérémie Tisserand"
+    },
+    {
+      "name": "Arnaud Freismuth"
+    }
+  ],
+  "main": "src/index.pug",
+  "repository": "github:tikui/tikui.org",
+  "scripts": {
+    "serve": "tikui-core serve",
+    "build": "tikui-core build",
+    "lint": "concurrently npm:sass:lint npm:pug:lint",
+    "pug:lint": "pug-lint src",
+    "sass:lint": "stylelint \"src/**/*.scss\" --syntax scss",
+    "sass:lint:fix": "stylelint \"src/**/*.scss\" --syntax scss --fix"
+  },
+  "dependencies": {
+    "@tikui/core": "^1.0.1",
+    "tikuidoc-tikui": "^1.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "husky": "^4.2.5",
+    "pug-lint": "^2.6.0",
+    "stylelint": "^13.3.3",
+    "stylelint-config-concentric-order": "^4.0.0",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-config-scss": "^1.0.0-security",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=12.16.1",
+    "npm": ">=6.13.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}
