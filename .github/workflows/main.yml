@@ -22,3 +22,9 @@ jobs:
           npm run build
         env:
           CI: true
+      - name: Docker hub publish
+        uses: elgohr/Publish-Docker-Github-Action@2.14
+        with:
+          name: tikui/tikui.org
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
