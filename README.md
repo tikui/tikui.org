@@ -1,9 +1,6 @@
-<img src="/logo-horizontal.svg" width=300 height=auto>
-
-
 # Tikui
 
-[![CircleCI](https://circleci.com/gh/tikui/tikui/tree/master.svg?style=svg)](https://circleci.com/gh/tikui/tikui/tree/master)
+![Tikui logo](./logo.svg)
 
 Tikui is a MIT-licensed free software project allowing you to create a web pattern library.
 
@@ -31,6 +28,17 @@ npm run serve
 
 ### Tutorial
 
+To generate the global structure of the component below, you can also use [Tikui CLI](https://github.com/tikui/tikui-cli) command (install `tikuicli` using `npm i -g @tikui/cli`), and then from the root of your project, run:
+
+```bash
+tikuicli create -p tikui button src/atom
+```
+
+> You can read the help from `tikuicli` and each commands using:
+>
+> * `tikuicli help` to see the global help
+> * `tikuicli help create` to see a command help, here `create`
+
 #### Create a component
 
 The source folder `src` follows the [Atomic Design](http://atomicdesign.bradfrost.com/table-of-contents/) methodology.
@@ -42,6 +50,8 @@ Inside `src/atom/atom.pug`, you have to describe your button by adding an inclus
 ```pug
 include:componentDoc(height=55) button/button.md
 ```
+
+> You can also use `include:templateDoc button/button.md` if you don't want to see the component render, it's useful on bigger components like templates.
 
 Now, you have to create your atom by adding the button folder and the button documentation as a markdown file:
 
@@ -86,7 +96,7 @@ And inside `button.code.pug`:
 button.tikui-button Button
 ```
 
-### Style 
+### Style
 
 Then you can see a button on the browser. Now, you have to change the appearance of this button on `_atom.scss` and `_button.scss` files:
 
@@ -113,13 +123,13 @@ Inside `_button.scss`:
 
 ```scss
 .tikui-button {
-    border: 1px solid #47a;
-    border-radius: 3px;
-    background-color: #47a;
-    padding: 5px;
-    line-height: 1.5rem;
-    color: #fff;
-    font-size: 1rem;
+  border: 1px solid #47a;
+  border-radius: 3px;
+  background-color: #47a;
+  padding: 5px;
+  line-height: 1.5rem;
+  color: #fff;
+  font-size: 1rem;
 }
 ```
 
