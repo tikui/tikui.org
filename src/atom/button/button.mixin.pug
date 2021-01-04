@@ -1,0 +1,4 @@
+mixin tikui-button(options)
+  -const {alternative} = options || {};
+  -const alternativeClass = alternative ? `-${alternative}` : null;
+  button.tikui-button(class=alternativeClass) Button

@@ -1,0 +1,39 @@
+$tikui-button-border-width: 1px !default;
+$tikui-button-padding: 19px !default;
+$tikui-button-min-width: 176px !default;
+$tikui-button-line-height: 20px !default;
+$tikui-button-font-size: 16px !default;
+$tikui-button-radius: 30px !default;
+$tikui-button-font-family: sans-serif !default;
+$tikui-button-color-background: $tikui-color-secondary !default;
+$tikui-button-color-border: $tikui-color-secondary !default;
+$tikui-button-color-text: $tikui-color-text-dark !default;
+
+$tikui-button-secondary-color-background: $tikui-color-shade-100 !default;
+$tikui-button-secondary-color-border: $tikui-color-secondary !default;
+$tikui-button-secondary-color-text: $tikui-color-text-dark !default;
+
+.tikui-button {
+  box-sizing: border-box;
+  display: inline-block;
+  outline: none;
+  border: $tikui-button-border-width solid $tikui-button-color-border;
+  border-radius: $tikui-button-radius;
+  background-color: $tikui-button-color-background;
+  cursor: pointer;
+  padding: $tikui-button-padding;
+  min-width: $tikui-button-min-width;
+  text-align: center;
+  text-decoration: none;
+  line-height: $tikui-button-line-height;
+  color: $tikui-button-color-text;
+  font-family: $tikui-button-font-family;
+  font-size: $tikui-button-font-size;
+  font-weight: bold;
+
+  &.-secondary {
+    border-color: $tikui-button-secondary-color-border;
+    background-color: $tikui-button-secondary-color-background;
+    color: $tikui-button-secondary-color-text;
+  }
+}

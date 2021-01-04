@@ -42,12 +42,12 @@
     "tikuidoc-tikui": "^1.0.2"
   },
   "devDependencies": {
-    "concurrently": "^5.2.0",
-    "husky": "^4.2.5",
+    "concurrently": "^5.3.0",
+    "husky": "^4.3.6",
     "pug-lint": "^2.6.0",
-    "stylelint": "^13.3.3",
-    "stylelint-config-concentric-order": "^4.0.0",
-    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-concentric-order": "^4.0.1",
+    "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-config-scss": "^1.0.0-security",
     "stylelint-config-standard": "^20.0.0"
   },
