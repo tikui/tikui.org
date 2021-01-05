@@ -5,13 +5,21 @@ $tikui-button-line-height: 20px !default;
 $tikui-button-font-size: 16px !default;
 $tikui-button-radius: 30px !default;
 $tikui-button-font-family: $tikui-font-family-main !default;
+
 $tikui-button-color-background: $tikui-color-secondary !default;
 $tikui-button-color-border: $tikui-color-secondary !default;
 $tikui-button-color-text: $tikui-color-text-dark !default;
 
+$tikui-button-focus-blur-radius: 5px !default;
+$tikui-button-focus-color-shadow: $tikui-color-primary !default;
+
+$tikui-button-hover--color-background: scale-color($tikui-button-color-background, $lightness: -10%) !default;
+
 $tikui-button-secondary-color-background: $tikui-color-shade-100 !default;
 $tikui-button-secondary-color-border: $tikui-color-secondary !default;
 $tikui-button-secondary-color-text: $tikui-color-text-dark !default;
+
+$tikui-button-secondary-hover--color-background: $tikui-button-color-background !default;
 
 .tikui-button {
   box-sizing: border-box;
@@ -31,9 +39,21 @@ $tikui-button-secondary-color-text: $tikui-color-text-dark !default;
   font-size: $tikui-button-font-size;
   font-weight: bold;
 
+  &:hover {
+    background-color: $tikui-button-hover--color-background;
+  }
+
+  &:focus {
+    box-shadow: 0 0 $tikui-button-focus-blur-radius $tikui-button-focus-color-shadow;
+  }
+
   &.-secondary {
     border-color: $tikui-button-secondary-color-border;
     background-color: $tikui-button-secondary-color-background;
     color: $tikui-button-secondary-color-text;
+
+    &:hover {
+      background-color: $tikui-button-secondary-hover--color-background;
+    }
   }
 }
