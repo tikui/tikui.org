@@ -1,0 +1,6 @@
+$tikui-title-section-font-size: 46px !default;
+
+.tikui-title-section {
+  @extend %tikui-title;
+  font-size: $tikui-title-section-font-size;
+}

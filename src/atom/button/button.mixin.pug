@@ -1,4 +1,6 @@
 mixin tikui-button(options)
-  -const {alternative} = options || {};
+  -const {alternative, href} = options || {};
   -const alternativeClass = alternative ? `-${alternative}` : null;
-  button.tikui-button(class=alternativeClass) Button
+  -const selector = href ? 'a' : 'button';
+  #{selector}.tikui-button(class=alternativeClass href=href)
+    block
