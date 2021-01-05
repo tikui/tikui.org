@@ -1,11 +1,26 @@
 extends /layout
 
 include /atom/button/button.mixin.pug
+include /atom/logo/logo.mixin.pug
 include /atom/title/title-main/title-main.mixin.pug
 include /atom/title/title-section/title-section.mixin.pug
 include /atom/title/title-part/title-part.mixin.pug
+include /molecule/header-navigation/header-navigation.mixin.pug
+include /organism/header/header.mixin.pug
 
 block body
+  -const GITHUB = 'https://github.com/tikui/tikui';
+  +tikui-header
+    +tikui-header--slot
+      +tikui-logo
+    +tikui-header--slot({expand: true})
+      +tikui-header-navigation
+        +tikui-header-navigation--slot({selected: true}) Home
+        +tikui-header-navigation--slot({href: 'resources.html'}) Resources
+        +tikui-header-navigation--slot({href: 'get-started.html'}) Get started
+    +tikui-header--slot
+      a(href=GITHUB title='Fork me on GitHub')
+        img(src='/assets/github.svg' width=35 height=30 alt='GitHub logo')
   section
     +tikui-title-main({selector: 'h1'}) create your#{'\n'}own style#{'\n'}#[span.tikui-title-main--bordered to suit your#{'\n'}product]
 
@@ -13,13 +28,9 @@ block body
 
     p Free software lead by passionated UI developers.
 
-    +tikui-button({href: 'https://github.com/tikui/tikui'}) GitHub
+    +tikui-button({href: GITHUB}) GitHub
 
     +tikui-button({alternative: 'secondary', href: 'get-started.html'}) Get started
-
-    ul
-      li
-        a(href='documentation.html') Read the doc
 
   section
     +tikui-title-section({selector: 'h2'}) Start crafting components

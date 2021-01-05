@@ -1,0 +1,62 @@
+$tikui-header-item-color-text: $tikui-color-text-dark !default;
+$tikui-header-item-font-family: $tikui-font-family-main !default;
+$tikui-header-item-spacing: 6px !default;
+$tikui-header-item-feedback-size: 9px !default;
+$tikui-header-item-feedback-color: $tikui-color-tertiary !default;
+$tikui-header-item-focus-color-shadow: $tikui-color-primary !default;
+$tikui-header-item-focus-radius-shadow: 5px !default;
+$tikui-header-item-font-size: 16px !default;
+$tikui-header-item-text-radius: 3px !default;
+
+$tikui-header-item-padding-bottom: $tikui-header-item-spacing + $tikui-header-item-feedback-size;
+
+.tikui-header-item {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  outline: none;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+  padding: 0 0 $tikui-header-item-padding-bottom;
+  text-decoration: none;
+  color: $tikui-header-item-color-text;
+  font-family: $tikui-header-item-font-family;
+  font-size: $tikui-header-item-font-size;
+
+  &:focus &--text {
+    border-radius: $tikui-header-item-text-radius;
+    box-shadow: 0 0 $tikui-header-item-focus-radius-shadow $tikui-header-item-focus-color-shadow;
+  }
+
+  &:hover &--text {
+    text-decoration: underline;
+  }
+
+  &.-selected {
+    font-weight: bold;
+  }
+
+  &.-selected &--feedback {
+    display: block;
+  }
+
+  &--feedback {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+
+    &::before {
+      display: inline-block;
+      border-radius: 50%;
+      background-color: $tikui-header-item-feedback-color;
+      width: $tikui-header-item-feedback-size;
+      height: $tikui-header-item-feedback-size;
+      content: '';
+    }
+  }
+}

@@ -1,0 +1,20 @@
+$tikui-header-height: $tikui-size-header-height !default;
+$tikui-header-spacing: 80px !default;
+
+.tikui-header {
+  display: flex;
+  align-items: center;
+  height: $tikui-header-height;
+
+  &--slot {
+    margin: 0 $tikui-header-spacing 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.-expand {
+      flex-grow: 1;
+    }
+  }
+}
