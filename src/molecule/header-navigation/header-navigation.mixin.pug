@@ -1,0 +1,15 @@
+include /atom/header-item/header-item.mixin.pug
+
+mixin tikui-header-navigation--slot(options)
+  li.tikui-header-navigation--slot
+    +tikui-header-item(options)
+      block
+mixin tikui-header-navigation
+  nav
+    ul.tikui-header-navigation
+      if block
+        block
+      else
+        +tikui-header-navigation--slot({selected: true}) First
+        +tikui-header-navigation--slot Second
+        +tikui-header-navigation--slot Third

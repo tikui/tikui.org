@@ -1,0 +1,18 @@
+include /atom/logo/logo.mixin.pug
+include /molecule/header-navigation/header-navigation.mixin.pug
+
+mixin tikui-header--slot(options)
+  -const {expand} = options || {};
+  -const expandClass = expand ? '-expand' : null;
+  .tikui-header--slot(class=expandClass)
+    block
+
+mixin tikui-header
+  header.tikui-header
+    if block
+      block
+    else
+      +tikui-header--slot
+        +tikui-logo
+      +tikui-header--slot({expand: true})
+        +tikui-header-navigation

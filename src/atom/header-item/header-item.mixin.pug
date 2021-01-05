@@ -1,0 +1,9 @@
+mixin tikui-header-item(options)
+  -const {href, selected} = options || {};
+  -const selector = href ? 'a' : 'button';
+  -const current = selected ? 'page' : null;
+  -const selectedClass = selected ? '-selected' : null;
+  #{selector}.tikui-header-item(href=href aria-current=current class=selectedClass)
+    span.tikui-header-item--text
+      block
+    span.tikui-header-item--feedback
