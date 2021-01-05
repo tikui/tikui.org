@@ -1,50 +1,55 @@
 extends /layout
 
+include /atom/button/button.mixin.pug
+include /atom/title/title-main/title-main.mixin.pug
+include /atom/title/title-section/title-section.mixin.pug
+include /atom/title/title-part/title-part.mixin.pug
+
 block body
   section
-    h1 create your own style to suit your product
+    +tikui-title-main({selector: 'h1'}) create your#{'\n'}own style#{'\n'}#[span.tikui-title-main--bordered to suit your#{'\n'}product]
 
     p With Tikui, craft static component, use them into your applications or add graphical components easily and simply thanks to Pattern Library starter.
 
     p Free software lead by passionated UI developers.
 
-    a.tikui-button(href='https://github.com/tikui/tikui') GitHub
+    +tikui-button({href: 'https://github.com/tikui/tikui'}) GitHub
 
-    a.tikui-button.-secondary(href='get-started.html') Get started
+    +tikui-button({alternative: 'secondary', href: 'get-started.html'}) Get started
 
     ul
       li
         a(href='documentation.html') Read the doc
 
   section
-    h2 Start crafting components
+    +tikui-title-section({selector: 'h2'}) Start crafting components
 
     p You want to create your own components. You can start with one component that will be integrated into your application.
 
   section
-    h2 Integrate a UI provided by a designer
+    +tikui-title-section({selector: 'h2'}) Integrate a UI provided by a designer
 
     p Do the integration on the Pattern Library to make it usable for Front-End developers.
 
   section
-    h2 Bring consistency when your applications styles looks like a patchwork
+    +tikui-title-section({selector: 'h2'}) Bring consistency when your applications styles looks like a patchwork
 
     p Capitalize on your style, rework your components and bring consistency to your application by keeping your graphical identity safe. You can do it iteratively by starting with simple components.
 
   section
-    h2 Free software and community driven
+    +tikui-title-section({selector: 'h2'}) Free software and community driven
 
     p Tikui is and will always be a free software tool. Check out on GitHub.
 
     section
-      h3 Read the doc
+      +tikui-title-part({selector: 'h2'}) Read the doc
 
       p Learn how to get up and running with Tikui, work with atoms, molecules, organisms and templates, and create your own Pattern Library.
 
-      a.tikui-button(href='doc.html') Documentation
+      +tikui-button({href: 'doc.html'}) Documentation
     section
-      h3 Resources
+      +tikui-title-part({selector: 'h2'}) Resources
 
       p Links to articles and resources around Atomic Design and Design Systems.
 
-      a.tikui-button(href='resources.html') Resources
+      +tikui-button({href: 'resources.html'}) Resources

@@ -1,0 +1,14 @@
+$tikui-title-main-font-size: 76px !default;
+$tikui-title-main-bordered-border-width: 1px !default;
+
+.tikui-title-main {
+  @extend %tikui-title;
+  font-size: $tikui-title-main-font-size;
+
+  &--bordered {
+    @supports (-webkit-text-stroke: $tikui-title-main-bordered-border-width $tikui-title-color-text) {
+      -webkit-text-stroke: $tikui-title-main-bordered-border-width $tikui-title-color-text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}

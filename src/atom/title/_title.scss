@@ -1,0 +1,17 @@
+$tikui-title-line-height: 1.2 !default;
+$tikui-title-font-family: $tikui-font-family-main !default;
+$tikui-title-color-text: $tikui-color-primary !default;
+
+%tikui-title {
+  margin: 0;
+  padding: 0;
+  line-height: $tikui-title-line-height;
+  white-space: pre-line;
+  color: $tikui-title-color-text;
+  font-family: $tikui-title-font-family;
+  font-weight: bold;
+}
+
+@import 'title-main/title-main';
+@import 'title-section/title-section';
+@import 'title-part/title-part';
