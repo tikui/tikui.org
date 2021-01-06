@@ -1,0 +1,15 @@
+@mixin tikui-vertical-spacing--line-size($size) {
+  &.-s#{$size} > &--line {
+    margin-bottom: $size * 1px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.tikui-vertical-spacing {
+  @each $size in $tikui-size-spacing {
+    @include tikui-vertical-spacing--line-size($size);
+  }
+}

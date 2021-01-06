@@ -2,11 +2,14 @@ extends /layout
 
 include /atom/button/button.mixin.pug
 include /atom/logo/logo.mixin.pug
+include /atom/paragraph/paragraph.mixin.pug
 include /atom/title/title-main/title-main.mixin.pug
 include /atom/title/title-section/title-section.mixin.pug
 include /atom/title/title-part/title-part.mixin.pug
 include /molecule/header-navigation/header-navigation.mixin.pug
 include /organism/header/header.mixin.pug
+include /organism/spacing/horizontal-spacing/horizontal-spacing.mixin.pug
+include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
 
 block body
   -const GITHUB = 'https://github.com/tikui/tikui';
@@ -21,46 +24,71 @@ block body
     +tikui-header--slot
       a(href=GITHUB title='Fork me on GitHub')
         img(src='/assets/github.svg' width=35 height=30 alt='GitHub logo')
-  section
-    +tikui-title-main({selector: 'h1'}) create your#{'\n'}own style#{'\n'}#[span.tikui-title-main--bordered to suit your#{'\n'}product]
 
-    p With Tikui, craft static component, use them into your applications or add graphical components easily and simply thanks to Pattern Library starter.
+  +tikui-vertical-spacing(100)
+    +tikui-vertical-spacing--line({selector: 'section'})
+      +tikui-horizontal-spacing(100, {equivalent: true})
+        +tikui-horizontal-spacing--column
+          +tikui-vertical-spacing(16)
+            +tikui-vertical-spacing--line
+              +tikui-title-main({selector: 'h1'}) create your own style#{'\n'}#[span.tikui-title-main--bordered to suit your product]
+            +tikui-vertical-spacing--line
+            +tikui-vertical-spacing--line
+              +tikui-vertical-spacing(32)
+                +tikui-vertical-spacing--line
+                  +tikui-paragraph With Tikui, craft static component, use them into your applications or add graphical components easily and simply thanks to Pattern Library starter.
+                +tikui-vertical-spacing--line
+                  +tikui-paragraph({bold: true}) Free software lead by passionated UI developers.
+                +tikui-vertical-spacing--line
+                  +tikui-horizontal-spacing(32)
+                    +tikui-horizontal-spacing--column
+                      +tikui-button({href: GITHUB}) GitHub
+                    +tikui-horizontal-spacing--column
+                      +tikui-button({alternative: 'secondary', href: 'get-started.html'}) Get started
+        +tikui-horizontal-spacing--column
+    +tikui-vertical-spacing--line({selector: 'section'})
+      +tikui-horizontal-spacing(200, {equivalent: true})
+        +tikui-horizontal-spacing--column
+          +tikui-vertical-spacing(16)
+            +tikui-vertical-spacing--line
+              +tikui-title-section({selector: 'h2'}) Start crafting components
+            +tikui-vertical-spacing--line
+              +tikui-paragraph You want to create your own components. You can start with one component that will be integrated into your application.
+        +tikui-horizontal-spacing--column
+    +tikui-vertical-spacing--line({selector: 'section'})
+      +tikui-horizontal-spacing(200, {equivalent: true})
+        +tikui-horizontal-spacing--column
+        +tikui-horizontal-spacing--column
+          +tikui-vertical-spacing(16)
+            +tikui-vertical-spacing--line
+              +tikui-title-section({selector: 'h2'}) Integrate a UI provided by a designer
+            +tikui-vertical-spacing--line
+              +tikui-paragraph Do the integration on the Pattern Library to make it usable for Front-End developers.
+    +tikui-vertical-spacing--line({selector: 'section'})
+      +tikui-horizontal-spacing(200, {equivalent: true})
+        +tikui-horizontal-spacing--column
+          +tikui-vertical-spacing(16)
+            +tikui-vertical-spacing--line
+              +tikui-title-section({selector: 'h2'}) Bring consistency when your applications styles looks like a patchwork
+            +tikui-vertical-spacing--line
+              +tikui-paragraph Capitalize on your style, rework your components and bring consistency to your application by keeping your graphical identity safe. You can do it iteratively by starting with simple components.
+        +tikui-horizontal-spacing--column
+    +tikui-vertical-spacing--line({selector: 'section'})
+      +tikui-vertical-spacing(16)
+        +tikui-vertical-spacing--line
+          +tikui-title-section({selector: 'h2'}) Free software and community driven
+        +tikui-vertical-spacing--line
+          +tikui-paragraph Tikui is and will always be a free software tool. Check out on GitHub.
+        +tikui-vertical-spacing--line
+          section
+            +tikui-title-part({selector: 'h2'}) Read the doc
 
-    p Free software lead by passionated UI developers.
+            +tikui-paragraph Learn how to get up and running with Tikui, work with atoms, molecules, organisms and templates, and create your own Pattern Library.
 
-    +tikui-button({href: GITHUB}) GitHub
+            +tikui-button({href: 'doc.html'}) Documentation
+          section
+            +tikui-title-part({selector: 'h2'}) Resources
 
-    +tikui-button({alternative: 'secondary', href: 'get-started.html'}) Get started
+            +tikui-paragraph Links to articles and resources around Atomic Design and Design Systems.
 
-  section
-    +tikui-title-section({selector: 'h2'}) Start crafting components
-
-    p You want to create your own components. You can start with one component that will be integrated into your application.
-
-  section
-    +tikui-title-section({selector: 'h2'}) Integrate a UI provided by a designer
-
-    p Do the integration on the Pattern Library to make it usable for Front-End developers.
-
-  section
-    +tikui-title-section({selector: 'h2'}) Bring consistency when your applications styles looks like a patchwork
-
-    p Capitalize on your style, rework your components and bring consistency to your application by keeping your graphical identity safe. You can do it iteratively by starting with simple components.
-
-  section
-    +tikui-title-section({selector: 'h2'}) Free software and community driven
-
-    p Tikui is and will always be a free software tool. Check out on GitHub.
-
-    section
-      +tikui-title-part({selector: 'h2'}) Read the doc
-
-      p Learn how to get up and running with Tikui, work with atoms, molecules, organisms and templates, and create your own Pattern Library.
-
-      +tikui-button({href: 'doc.html'}) Documentation
-    section
-      +tikui-title-part({selector: 'h2'}) Resources
-
-      p Links to articles and resources around Atomic Design and Design Systems.
-
-      +tikui-button({href: 'resources.html'}) Resources
+            +tikui-button({href: 'resources.html'}) Resources
