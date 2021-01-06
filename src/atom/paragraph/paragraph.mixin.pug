@@ -1,0 +1,5 @@
+mixin tikui-paragraph(options)
+  -const {bold} = options || {};
+  -const boldClass = bold ? '-bold' : null;
+  p.tikui-paragraph(class=boldClass)
+    block

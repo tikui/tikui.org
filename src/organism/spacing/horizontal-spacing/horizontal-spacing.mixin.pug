@@ -1,0 +1,11 @@
+mixin tikui-horizontal-spacing--column
+  .tikui-horizontal-spacing--column
+    block
+
+mixin tikui-horizontal-spacing(size, options)
+  -const {equivalent} = options || {};
+  -const equivalentClass = equivalent ? '-equivalent' : null;
+  -const sizeClass = `-s${size}`;
+  -const classes = [equivalentClass, sizeClass].filter(cssClass => cssClass !== null).join(' ');
+  .tikui-horizontal-spacing(class=classes)
+    block

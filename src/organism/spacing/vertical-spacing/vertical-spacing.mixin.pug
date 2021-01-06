@@ -1,0 +1,10 @@
+mixin tikui-vertical-spacing--line(options)
+  -const {selector} = options || {};
+  -const selectorResolved = selector ? selector : 'div';
+  #{selectorResolved}.tikui-vertical-spacing--line
+    block
+
+mixin tikui-vertical-spacing(size)
+  -const sizeClass = `-s${size}`;
+  .tikui-vertical-spacing(class=sizeClass)
+    block
