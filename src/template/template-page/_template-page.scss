@@ -1,0 +1,50 @@
+$tikui-template-page-atomized-x: calc(50vw - 260px) !default;
+$tikui-template-page-atomized-y: -1260px !default;
+$tikui-template-page-atomized-image: url('/assets/atom-background.svg') !default;
+$tikui-template-page-large-breakpoint: $tikui-breakpoint-large !default;
+$tikui-template-page-spacing: 80px !default;
+$tikui-template-page-container-width: 1232px !default;
+
+.tikui-template-page {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: column;
+
+  &.-atomized &--body {
+    background-attachment: local;
+    background-image: $tikui-template-page-atomized-image;
+    background-position-x: $tikui-template-page-atomized-x;
+    background-position-y: $tikui-template-page-atomized-y;
+    background-repeat: no-repeat;
+  }
+
+  &--container {
+    box-sizing: content-box;
+    margin: auto;
+    padding: 0 $tikui-template-page-spacing;
+    width: $tikui-template-page-container-width;
+  }
+
+  &--header {
+    background-color: $tikui-color-shade-100;
+  }
+
+  &--body {
+    flex-grow: 1;
+    background-color: $tikui-color-background;
+    padding: $tikui-template-page-spacing 0;
+    overflow: auto;
+  }
+}
+
+@media screen and (max-width: $tikui-template-page-large-breakpoint) {
+  .tikui-template-page {
+    &--container {
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+$tikui-dual-section-horizontal-spacing: 200px !default;
+$tikui-dual-section-vertical-spacing: 100px !default;
+$tikui-dual-section-medium-breakpoint: $tikui-breakpoint-medium !default;
+
+.tikui-dual-section {
+  display: flex;
+  align-items: center;
+
+  &.-right-to-left {
+    flex-direction: row-reverse;
+  }
+
+  &.-right-to-left > &--slot {
+    margin-left: $tikui-dual-section-horizontal-spacing;
+
+    &:first-child {
+      text-align: left;
+    }
+
+    &:last-child {
+      margin-left: 0;
+      text-align: right;
+    }
+  }
+
+  &.-left-to-right {
+    flex-direction: row;
+  }
+
+  &.-left-to-right > &--slot {
+    margin-right: $tikui-dual-section-horizontal-spacing;
+
+    &:first-child {
+      text-align: right;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      text-align: left;
+    }
+  }
+
+  &--slot {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width: $tikui-dual-section-medium-breakpoint) {
+  .tikui-dual-section {
+    display: block;
+
+    &.-right-to-left > &--slot, &.-left-to-right > &--slot {
+      &:first-child, &:last-child {
+        margin: 0 0 $tikui-dual-section-vertical-spacing;
+        text-align: center;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

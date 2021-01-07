@@ -1,0 +1,27 @@
+include /molecule/header-navigation/header-navigation.mixin.pug
+include /organism/header/header.mixin.pug
+include /template/template-page/template-page.mixin.pug
+
+mixin tikui-page-navigation-slot(page, current)
+  -const options = current === page ? {selected: true} : {href: page};
+  +tikui-header-navigation--slot(options)
+    block
+
+mixin tikui-page(current, options)
+  -const GITHUB = 'https://github.com/tikui/tikui';
+  +tikui-template-page(options)
+    +tikui-template-page--header
+      +tikui-template-page--container
+        +tikui-header
+          +tikui-header--slot
+            +tikui-logo
+          +tikui-header--slot({expand: true})
+            +tikui-header-navigation
+              +tikui-page-navigation-slot('index.html', current) Home
+              +tikui-page-navigation-slot('resources.html', current) Resources
+              +tikui-page-navigation-slot('get-started.html', current) Get started
+          +tikui-header--slot
+            a(href=GITHUB title='Fork me on GitHub')
+              img(src='/assets/github.svg' width=35 height=30 alt='GitHub logo')
+    +tikui-template-page--body
+      block

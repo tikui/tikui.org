@@ -1,0 +1,21 @@
+include dual-section.mixin.pug
+
+include /atom/image/image.mixin.pug
+include /atom/paragraph/paragraph.mixin.pug
+include /atom/title/title-section/title-section.mixin.pug
+include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
+
+mixin tikui-dual-section-example(direction)
+  +tikui-dual-section(direction, 200)
+    +tikui-dual-section--slot
+      +tikui-vertical-spacing(16)
+        +tikui-vertical-spacing--line
+          +tikui-title-section Section title
+        +tikui-vertical-spacing--line
+          +tikui-paragraph Paragraph
+    +tikui-dual-section--slot
+      +tikui-image({src: '/assets/placards-illustration.svg', alt: 'Illustration example', width:436, height:341})
+
++tikui-dual-section-example('left-to-right')
+
++tikui-dual-section-example('right-to-left')
