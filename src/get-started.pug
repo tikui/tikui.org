@@ -1,5 +1,11 @@
 extends /layout
 
+include /page.mixin.pug
+
+include /atom/title/title-main/title-main.mixin.pug
+include /template/template-page/template-page.mixin.pug
+
 block body
-  section
-    h1 Get started
+  +tikui-page('get-started.html')
+    +tikui-template-page--container
+      +tikui-title-main({selector: 'h1'}) Get started

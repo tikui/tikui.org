@@ -1,0 +1,21 @@
+mixin tikui-template-page--header
+  .tikui-template-page--header
+    block
+
+mixin tikui-template-page--body
+  .tikui-template-page--body
+    block
+
+mixin tikui-template-page--content
+  .tikui-template-page--content
+    block
+
+mixin tikui-template-page--container
+  .tikui-template-page--container
+    block
+
+mixin tikui-template-page(options)
+  -const {atomized} = options || {};
+  -const atomizedClass = atomized ? `-atomized` : null;
+  .tikui-template-page(class=atomizedClass)
+    block

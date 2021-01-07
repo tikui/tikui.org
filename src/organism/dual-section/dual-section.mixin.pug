@@ -1,0 +1,8 @@
+mixin tikui-dual-section--slot
+  .tikui-dual-section--slot
+    block
+
+mixin tikui-dual-section(direction)
+  -const directionClass=`-${direction}`;
+  .tikui-dual-section(class=directionClass)
+    block
