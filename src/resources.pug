@@ -2,10 +2,36 @@ extends /layout
 
 include /page.mixin.pug
 
+include /atom/link/link.mixin.pug
 include /atom/title/title-main/title-main.mixin.pug
+include /atom/title/title-section/title-section.mixin.pug
+include /atom/paragraph/paragraph.mixin.pug
+include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
 include /template/template-page/template-page.mixin.pug
 
 block body
   +tikui-page('resources.html')
     +tikui-template-page--container
-      +tikui-title-main({selector: 'h1'}) Resources
+      +tikui-vertical-spacing(32)
+        +tikui-vertical-spacing--line
+          +tikui-vertical-spacing(24)
+            +tikui-vertical-spacing--line
+              +tikui-title-main({selector: 'h1'}) Resources
+            +tikui-vertical-spacing--line
+              +tikui-paragraph({bold: true}) Find here all links to articles and resources we recommend you to read.
+            +tikui-vertical-spacing--line
+              +tikui-paragraph Even if resources are listed under this section, you may need to make your own opinion and not follow them like a plan.
+        +tikui-vertical-spacing--line
+          section
+            +tikui-vertical-spacing(16)
+              +tikui-vertical-spacing--line
+                +tikui-title-section({selector: 'h2'}) Atomic Design
+              +tikui-vertical-spacing--line
+                +tikui-paragraph Atomic Design is a methodology created by #[+tikui-link('https://bradfrost.com') Brad Frost] in 2013 with his #[+tikui-link('https://bradfrost.com/blog/post/atomic-web-design') original blog post]. You may also need to read the #[+tikui-link('https://atomicdesign.bradfrost.com') book] to understand how to use Atoms, Molecules, Organisms, Templates and Pages.
+        +tikui-vertical-spacing--line
+          section
+            +tikui-vertical-spacing(16)
+              +tikui-vertical-spacing--line
+                +tikui-title-section({selector: 'h2'}) Design System
+              +tikui-vertical-spacing--line
+                +tikui-paragraph Design System is a large subject. There are a lot of things around it. #[strong Design Systems] by #[+tikui-link('https://www.craftui.com') Alla Kholmatova] seems to be a good start to have ideas on what it is. You can also discuss about it on the #[+tikui-link('https://design.systems/slack/') Design Systems Slack].

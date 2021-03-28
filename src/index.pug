@@ -8,7 +8,9 @@ include /atom/paragraph/paragraph.mixin.pug
 include /atom/title/title-main/title-main.mixin.pug
 include /atom/title/title-section/title-section.mixin.pug
 include /atom/title/title-part/title-part.mixin.pug
+include /molecule/atom/atom.mixin.pug
 include /organism/dual-section/dual-section.mixin.pug
+include /organism/linear-molecule/linear-molecule.mixin.pug
 include /organism/spacing/horizontal-spacing/horizontal-spacing.mixin.pug
 include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
 include /template/template-page/template-page.mixin.pug
@@ -19,8 +21,8 @@ block body
     +tikui-template-page--container
       +tikui-vertical-spacing(100)
         +tikui-vertical-spacing--line({selector: 'section'})
-          +tikui-horizontal-spacing(100, {equivalent: true})
-            +tikui-horizontal-spacing--column
+          +tikui-dual-section('left-to-right', {distant: true, space: 100})
+            +tikui-dual-section--slot
               +tikui-vertical-spacing(16)
                 +tikui-vertical-spacing--line
                   +tikui-title-main({selector: 'h1'}) create your own style#{'\n'}#[span.tikui-title-main--bordered to suit your product]
@@ -31,12 +33,12 @@ block body
                     +tikui-vertical-spacing--line
                       +tikui-paragraph({bold: true}) Free software lead by passionated UI developers.
                     +tikui-vertical-spacing--line
-                      +tikui-horizontal-spacing(32)
+                      +tikui-horizontal-spacing(32, { inline: true })
                         +tikui-horizontal-spacing--column
                           +tikui-button({href: GITHUB}) GitHub
                         +tikui-horizontal-spacing--column
                           +tikui-button({alternative: 'secondary', href: 'get-started.html'}) Get started
-            +tikui-horizontal-spacing--column
+            +tikui-dual-section--slot
               +tikui-image({src: '/assets/skateboard-illustration.svg', alt: 'Man on a skateboard with gifts in his bag', width: 599, height: 512})
         +tikui-vertical-spacing--line({selector: 'section'})
           +tikui-dual-section('left-to-right')
@@ -75,15 +77,24 @@ block body
             +tikui-vertical-spacing--line
               +tikui-paragraph Tikui is and will always be a free software tool. Check out on GitHub.
             +tikui-vertical-spacing--line
-              section
-                +tikui-title-part({selector: 'h2'}) Read the doc
-
-                +tikui-paragraph Learn how to get up and running with Tikui, work with atoms, molecules, organisms and templates, and create your own Pattern Library.
-
-                +tikui-button({href: 'doc.html'}) Documentation
-              section
-                +tikui-title-part({selector: 'h2'}) Resources
-
-                +tikui-paragraph Links to articles and resources around Atomic Design and Design Systems.
-
-                +tikui-button({href: 'resources.html'}) Resources
+              +tikui-linear-molecule
+                +tikui-linear-molecule--atom
+                  section
+                    +tikui-atom
+                      +tikui-vertical-spacing(16)
+                        +tikui-vertical-spacing--line
+                          +tikui-title-part({selector: 'h2'}) Read the doc
+                        +tikui-vertical-spacing--line
+                          +tikui-paragraph Learn how to get up and running with Tikui, work with atoms, molecules, organisms and templates, and create your own Pattern Library.
+                        +tikui-vertical-spacing--line
+                          +tikui-button({href: 'doc.html'}) Documentation
+                +tikui-linear-molecule--atom
+                  section
+                    +tikui-atom
+                      +tikui-vertical-spacing(16)
+                        +tikui-vertical-spacing--line
+                          +tikui-title-part({selector: 'h2'}) Resources
+                        +tikui-vertical-spacing--line
+                          +tikui-paragraph Links to articles and resources around Atomic Design and Design Systems.
+                        +tikui-vertical-spacing--line
+                          +tikui-button({href: 'resources.html'}) Resources

@@ -3,9 +3,10 @@ mixin tikui-horizontal-spacing--column
     block
 
 mixin tikui-horizontal-spacing(size, options)
-  -const {equivalent} = options || {};
+  -const {equivalent, inline} = options || {};
   -const equivalentClass = equivalent ? '-equivalent' : null;
   -const sizeClass = `-s${size}`;
-  -const classes = [equivalentClass, sizeClass].filter(cssClass => cssClass !== null).join(' ');
+  -const inlineClass = inline ? '-inline' : null;
+  -const classes = [equivalentClass, sizeClass, inlineClass].filter(cssClass => cssClass !== null).join(' ');
   .tikui-horizontal-spacing(class=classes)
     block

@@ -2,7 +2,11 @@ mixin tikui-dual-section--slot
   .tikui-dual-section--slot
     block
 
-mixin tikui-dual-section(direction)
-  -const directionClass=`-${direction}`;
-  .tikui-dual-section(class=directionClass)
+mixin tikui-dual-section(direction, options)
+  -const {space, distant} = options || {};
+  -const directionClass =`-${direction}`;
+  -const spaceClass =`-s${space || 200}`;
+  -const distantClass = distant ? '-distant' : null;
+  -const classes = [directionClass, spaceClass, distantClass].filter((cssClass) => cssClass !== null).join(' ');
+  .tikui-dual-section(class=classes)
     block

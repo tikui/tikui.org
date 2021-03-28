@@ -2,7 +2,21 @@ $tikui-dual-section-horizontal-spacing: 200px !default;
 $tikui-dual-section-vertical-spacing: 100px !default;
 $tikui-dual-section-medium-breakpoint: $tikui-breakpoint-medium !default;
 
+@mixin tikui-dual-section-size($size) {
+  $size-pixel: $size * 1px;
+
+  &.-s#{$size}.-right-to-left > &--slot {
+    margin-left: $size-pixel;
+  }
+
+  &.-s#{$size}.-left-to-right > &--slot {
+    margin-right: $size-pixel;
+  }
+}
+
 .tikui-dual-section {
+  @include tikui-dual-section-size(100);
+  @include tikui-dual-section-size(200);
   display: flex;
   align-items: center;
 
@@ -11,8 +25,6 @@ $tikui-dual-section-medium-breakpoint: $tikui-breakpoint-medium !default;
   }
 
   &.-right-to-left > &--slot {
-    margin-left: $tikui-dual-section-horizontal-spacing;
-
     &:first-child {
       text-align: left;
     }
@@ -28,8 +40,6 @@ $tikui-dual-section-medium-breakpoint: $tikui-breakpoint-medium !default;
   }
 
   &.-left-to-right > &--slot {
-    margin-right: $tikui-dual-section-horizontal-spacing;
-
     &:first-child {
       text-align: right;
     }
@@ -44,13 +54,36 @@ $tikui-dual-section-medium-breakpoint: $tikui-breakpoint-medium !default;
     flex-basis: 0;
     flex-grow: 1;
   }
+
+  &.-distant.-right-to-left > &--slot {
+    &:first-child {
+      text-align: right;
+    }
+
+    &:last-child {
+      text-align: left;
+    }
+  }
+
+  &.-distant.-left-to-right > &--slot {
+    &:first-child {
+      text-align: left;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
 }
 
 @media screen and (max-width: $tikui-dual-section-medium-breakpoint) {
   .tikui-dual-section {
     display: block;
 
-    &.-right-to-left > &--slot, &.-left-to-right > &--slot {
+    &.-distant.-right-to-left > &--slot,
+    &.-distant.-left-to-right > &--slot,
+    &.-right-to-left > &--slot,
+    &.-left-to-right > &--slot {
       &:first-child, &:last-child {
         margin: 0 0 $tikui-dual-section-vertical-spacing;
         text-align: center;
