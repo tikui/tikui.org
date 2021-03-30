@@ -14,12 +14,14 @@ mixin tikui-page(current, options)
       +tikui-template-page--container
         +tikui-header
           +tikui-header--slot
-            +tikui-logo
+            a(href='/')
+              +tikui-logo
           +tikui-header--slot({expand: true})
             +tikui-header-navigation
               +tikui-page-navigation-slot('index.html', current) Home
-              +tikui-page-navigation-slot('resources.html', current) Resources
+              +tikui-page-navigation-slot('doc.html', current) Documentation
               +tikui-page-navigation-slot('get-started.html', current) Get started
+              +tikui-page-navigation-slot('about.html', current) About
           +tikui-header--slot
             a(href=GITHUB title='Fork me on GitHub')
               img(src='/assets/github.svg' width=35 height=30 alt='GitHub logo')

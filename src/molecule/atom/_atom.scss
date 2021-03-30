@@ -1,0 +1,30 @@
+$tikui-atom-outer-space: 60px !default;
+$tikui-atom-inner-space: 16px !default;
+$tikui-atom-color-outline: $tikui-color-background-secondary !default;
+$tikui-atom-color-background: $tikui-color-background-secondary !default;
+
+.tikui-atom {
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid $tikui-atom-color-outline;
+  border-radius: 50%;
+  padding-bottom: 100%;
+  width: 100%;
+
+  &--heart {
+    box-sizing: border-box;
+    display: flex;
+    position: absolute;
+    top: $tikui-atom-outer-space;
+    right: $tikui-atom-outer-space;
+    bottom: $tikui-atom-outer-space;
+    left: $tikui-atom-outer-space;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: $tikui-atom-color-background;
+    padding: $tikui-atom-inner-space;
+    text-align: center;
+  }
+
+}

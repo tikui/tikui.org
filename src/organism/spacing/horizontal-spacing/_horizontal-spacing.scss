@@ -14,6 +14,10 @@
   }
   display: flex;
 
+  &.-inline {
+    display: inline-flex;
+  }
+
   &.-equivalent > &--column {
     flex-basis: 0;
     flex-grow: 1;

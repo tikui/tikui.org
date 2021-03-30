@@ -1,0 +1,30 @@
+$tikui-linear-molecule: 30px !default;
+$tikui-linear-molecule-medium-breakpoint: $tikui-breakpoint-medium !default;
+
+.tikui-linear-molecule {
+  display: flex;
+
+  &--atom {
+    flex-basis: 0;
+    flex-grow: 1;
+    margin-right: -$tikui-linear-molecule;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $tikui-linear-molecule-medium-breakpoint) { .tikui-linear-molecule {
+    flex-direction: column;
+
+    &--atom {
+      margin-right: 0;
+      margin-bottom: -$tikui-linear-molecule;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
