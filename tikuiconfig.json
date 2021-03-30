@@ -3,6 +3,9 @@
   "expose": {
     "node_modules/prismjs/themes": "prism/themes",
     "node_modules/prismjs/components": "prism/components",
-    "node_modules/prismjs/plugins": "prism/plugins"
+    "node_modules/prismjs/plugins": "prism/plugins",
+    "node_modules/@fontsource/montserrat/files": "montserrat/files",
+    "node_modules/@fontsource/montserrat/index.css": "montserrat/index.css",
+    "node_modules/@fontsource/montserrat/700.css": "montserrat/700.css"
   }
 }
