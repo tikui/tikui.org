@@ -1,6 +1,6 @@
 {
   "name": "tikui.org",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Tikui Website",
   "keywords": [
     "ui",
@@ -32,27 +32,16 @@
   "scripts": {
     "serve": "tikui-core serve",
     "build": "tikui-core build",
-    "lint": "concurrently npm:sass:lint npm:pug:lint",
-    "pug:lint": "pug-lint src",
-    "sass:lint": "stylelint \"src/**/*.scss\" --syntax scss",
-    "sass:lint:fix": "stylelint \"src/**/*.scss\" --syntax scss --fix",
+    "lint": "pug-lint src",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@fontsource/montserrat": "^4.5.1",
-    "@tikui/core": "^1.4.0",
-    "prismjs": "^1.25.0",
-    "tikuidoc-tikui": "^2.0.0"
+    "@tikui/core": "^1.5.1",
+    "tikuidoc-tikui": "^3.0.0"
   },
   "devDependencies": {
-    "concurrently": "^6.3.0",
     "husky": "^7.0.2",
-    "pug-lint": "^2.6.0",
-    "stylelint": "^13.13.1",
-    "stylelint-config-concentric-order": "^4.0.1",
-    "stylelint-config-sass-guidelines": "^8.0.0",
-    "stylelint-config-scss": "^1.0.0-security",
-    "stylelint-config-standard": "^22.0.0"
+    "pug-lint": "^2.6.0"
   },
   "engines": {
     "node": ">=14.17.5",

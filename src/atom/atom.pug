@@ -7,15 +7,16 @@ block title
   title Tikui - Atoms
 
 block content
-  .container
-    h1 Atoms
-
-    include /documentation/atomic-design/quote/atom
-
-    include:componentDoc(height=80) button/button.md
-    include:componentDoc(height=100) header-item/header-item.md
-    include:componentDoc(height=550) image/image.md
-    include:componentDoc(height=50) link/link.md
-    include:componentDoc(height=100) logo/logo.md
-    include:componentDoc(height=120) paragraph/paragraph.md
-    include title/title
+  .tikui-vertical-spacing.-s32
+    .tikui-vertical-spacing--line
+      h1.tikui-title-main Atoms
+    .tikui-vertical-spacing--line
+      include /documentation/atomic-design/quote/atom
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=80) button/button.md
+      include:componentDoc(height=100) header-item/header-item.md
+      include:componentDoc(height=550) image/image.md
+      include:componentDoc(height=50) link/link.md
+      include:componentDoc(height=100) logo/logo.md
+      include:componentDoc(height=120) paragraph/paragraph.md
+      include title/title
