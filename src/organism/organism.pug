@@ -7,12 +7,13 @@ block title
   title Tikui - Organisms
 
 block content
-  .container
-    h1 Organisms
-
-    include /documentation/atomic-design/quote/organism
-
-    include:componentDoc(height=720) dual-section/dual-section.md
-    include:componentDoc(height=120) header/header.md
-    include:componentDoc(height=600) linear-molecule/linear-molecule.md
-    include spacing/spacing
+  .tikui-vertical-spacing.-s32
+    .tikui-vertical-spacing--line
+      h1.tikui-title-main Organisms
+    .tikui-vertical-spacing--line
+      include /documentation/atomic-design/quote/organism
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=720) dual-section/dual-section.md
+      include:componentDoc(height=120) header/header.md
+      include:componentDoc(height=600) linear-molecule/linear-molecule.md
+      include spacing/spacing

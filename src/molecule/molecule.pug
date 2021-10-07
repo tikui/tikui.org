@@ -7,10 +7,11 @@ block title
   title Tikui - Molecules
 
 block content
-  .container
-    h1 Molecules
-
-    include /documentation/atomic-design/quote/molecule
-
-    include:componentDoc(height=400) atom/atom.md
-    include:componentDoc(height=60) header-navigation/header-navigation.md
+  .tikui-vertical-spacing.-s32
+    .tikui-vertical-spacing--line
+      h1.tikui-title-main Molecules
+    .tikui-vertical-spacing--line
+      include /documentation/atomic-design/quote/molecule
+    .tikui-vertical-spacing--line
+      include:componentDoc(height=400) atom/atom.md
+      include:componentDoc(height=60) header-navigation/header-navigation.md
