@@ -6,9 +6,9 @@ block header
   block vars
     -let active='';
     -const isActive = current => current === active;
-  +tikui-navbar('/', 'Tikui.org')
-    +tikui-navbar-item('/documentation.html', 'Documentation', isActive('documentation'))
-    +tikui-navbar-item('/atom/atom.html', 'Atoms', isActive('atom'))
-    +tikui-navbar-item('/molecule/molecule.html', 'Molecules', isActive('molecule'))
-    +tikui-navbar-item('/organism/organism.html', 'Organisms', isActive('organism'))
-    +tikui-navbar-item('/template/template.html', 'Templates', isActive('template'))
+  +tikui-navbar('[[TIKUI_BASEPATH]]index.html', 'Tikui.org')
+    +tikui-navbar-item('[[TIKUI_BASEPATH]]documentation.html', 'Documentation', isActive('documentation'))
+    +tikui-navbar-item('[[TIKUI_BASEPATH]]atom/atom.html', 'Atoms', isActive('atom'))
+    +tikui-navbar-item('[[TIKUI_BASEPATH]]molecule/molecule.html', 'Molecules', isActive('molecule'))
+    +tikui-navbar-item('[[TIKUI_BASEPATH]]organism/organism.html', 'Organisms', isActive('organism'))
+    +tikui-navbar-item('[[TIKUI_BASEPATH]]template/template.html', 'Templates', isActive('template'))

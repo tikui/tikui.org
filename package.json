@@ -36,8 +36,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@tikui/core": "^1.5.1",
-    "tikuidoc-tikui": "^3.0.0"
+    "@tikui/core": "^2.0.0",
+    "tikuidoc-tikui": "^4.0.0"
   },
   "devDependencies": {
     "husky": "^7.0.2",
