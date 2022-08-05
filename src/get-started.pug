@@ -34,22 +34,28 @@ block body
               +tikui-title-part({selector: 'h3'}) Step 1: Install requirements
             +tikui-vertical-spacing--line
               +tikui-paragraph Make sure you have #[+tikui-link('https://nodejs.org/') Node.js] installed before setting up Tikui.
+            +tikui-vertical-spacing--line
+              +tikui-paragraph Then install #[a(href='https://github.com/tikui/tikui-cli') Tikui CLI]:
+            +tikui-vertical-spacing--line
+              +prism('bash') npm i -g @tikui/cli
         +tikui-vertical-spacing--line
           +tikui-vertical-spacing(16)
             +tikui-vertical-spacing--line
-              +tikui-title-part({selector: 'h3'}) Step 2: Get the source project
+              +tikui-title-part({selector: 'h3'}) Step 2: Generate your pattern library
             +tikui-vertical-spacing--line
-              +tikui-paragraph Clone the repository or download it:
+              +tikui-paragraph The next command will generate #[strong my-pattern-library] folder with a Tikui installation:
             +tikui-vertical-spacing--line
-              +prism('bash') git clone https://github.com/tikui/tikui.git
+              +prism('bash') tikui generate my-pattern-library
         +tikui-vertical-spacing--line
           +tikui-vertical-spacing(16)
             +tikui-vertical-spacing--line
               +tikui-title-part({selector: 'h3'}) Step 3: Install dependencies
             +tikui-vertical-spacing--line
-              +tikui-paragraph Go to the root Tikui directory and run:
+              +tikui-paragraph Go to the root folder and install:
             +tikui-vertical-spacing--line
-              +prism('bash') npm install
+              +prism('bash').
+                cd my-pattern-library
+                npm install
         +tikui-vertical-spacing--line
           +tikui-vertical-spacing(16)
             +tikui-vertical-spacing--line
