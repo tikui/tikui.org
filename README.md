@@ -28,16 +28,16 @@ npm run serve
 
 ### Tutorial
 
-To generate the global structure of the component below, you can also use [Tikui CLI](https://github.com/tikui/tikui-cli) command (install `tikuicli` using `npm i -g @tikui/cli`), and then from the root of your project, run:
+To generate the global structure of the component below, you can use [Tikui CLI](https://github.com/tikui/tikui-cli) command (install `tikui` using `npm i -g @tikui/cli`), and then from the root of your project, run:
 
 ```bash
-tikuicli create -p tikui button src/atom
+tikui create -p tikui button src/atom
 ```
 
-> You can read the help from `tikuicli` and each commands using:
+> You can read the help from `tikui` and each commands using:
 >
-> * `tikuicli help` to see the global help
-> * `tikuicli help create` to see a command help, here `create`
+> * `tikui help` to see the global help
+> * `tikui help create` to see a command help, here `create`
 
 #### Create a component
 
@@ -87,7 +87,7 @@ Inside `button.render.pug`, you can add:
 extends /layout
 
 block body
-    include button.code.pug
+  include button.code.pug
 ```
 
 And inside `button.code.pug`:
