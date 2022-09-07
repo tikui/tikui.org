@@ -1,9 +1,11 @@
 include template-page.mixin.pug
 
 include /atom/button/button.mixin.pug
+include /atom/nav-item/nav-item.mixin.pug
 include /atom/paragraph/paragraph.mixin.pug
 include /atom/title/title-main/title-main.mixin.pug
 include /atom/title/title-section/title-section.mixin.pug
+include /molecule/nav-vertical/nav-vertical.mixin.pug
 include /organism/header/header.mixin.pug
 include /organism/spacing/horizontal-spacing/horizontal-spacing.mixin.pug
 include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
@@ -13,6 +15,16 @@ include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
     +tikui-template-page--container
       +tikui-header
   +tikui-template-page--body
+    +tikui-template-page--nav
+      +tikui-nav-vertical
+        +tikui-nav-vertical--item(1)
+          +tikui-nav-item({main: true}) Main link
+        +tikui-nav-vertical--item(2)
+          +tikui-nav-item First child link
+        +tikui-nav-vertical--item(2)
+          +tikui-nav-item({selected: true}) Selected child link
+        +tikui-nav-vertical--item(3)
+          +tikui-nav-item Level 3 child link
     +tikui-template-page--container
       +tikui-vertical-spacing(100)
         +tikui-vertical-spacing--line({selector: 'section'})

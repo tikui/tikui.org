@@ -1,0 +1,7 @@
+mixin tikui-nav-item(opts)
+  -const {selected, main, href} = opts || {};
+  -const mainClass = main ? '-main' : '-child';
+  -const selectedClass = selected ? '-selected' : null;
+  -const classes = [mainClass, selectedClass].filter(cssClass => cssClass !== null).join(' ');
+  a.tikui-nav-item(href=`${href || '#'}` class=classes)
+    block
