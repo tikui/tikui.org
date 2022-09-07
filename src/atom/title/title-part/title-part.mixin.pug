@@ -1,5 +1,5 @@
 mixin tikui-title-part(options)
-  -const {selector} = options || {};
+  -const {selector, id} = options || {};
   -const selectorResolved = selector ? selector : 'div';
-  #{selectorResolved}.tikui-title-part
+  #{selectorResolved}.tikui-title-part(id=id || null)
     block

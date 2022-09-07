@@ -5,15 +5,31 @@ include /page.mixin.pug
 include /prism.mixin.pug
 
 include /atom/link/link.mixin.pug
+include /atom/nav-item/nav-item.mixin.pug
 include /atom/paragraph/paragraph.mixin.pug
 include /atom/title/title-main/title-main.mixin.pug
 include /atom/title/title-section/title-section.mixin.pug
 include /atom/title/title-part/title-part.mixin.pug
+include /molecule/nav-vertical/nav-vertical.mixin.pug
 include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
 include /template/template-page/template-page.mixin.pug
 
 block body
   +tikui-page('get-started.html')
+    +tikui-template-page--nav
+      +tikui-nav-vertical
+        +tikui-nav-vertical--item(1)
+          +tikui-nav-item({main: true, href: '#installingtikui'}) Intalling Tikui
+        +tikui-nav-vertical--item(2)
+          +tikui-nav-item({href: '#installrequirements'}) Install requirements
+        +tikui-nav-vertical--item(2)
+          +tikui-nav-item({href: '#generateyourpatternlibrary'}) Generate your pattern library
+        +tikui-nav-vertical--item(2)
+          +tikui-nav-item({href: '#installdependencies'}) Install dependencies
+        +tikui-nav-vertical--item(2)
+          +tikui-nav-item({href: '#serveandcode'}) Serve and code
+        +tikui-nav-vertical--item(2)
+          +tikui-nav-item({href: '#build'}) Build
     +tikui-template-page--container
       +tikui-vertical-spacing(32)
         +tikui-vertical-spacing--line
@@ -25,13 +41,13 @@ block body
         +tikui-vertical-spacing--line
           +tikui-vertical-spacing(16)
             +tikui-vertical-spacing--line
-              +tikui-title-section({selector: 'h2'}) Intalling Tikui
+              +tikui-title-section({selector: 'h2', id: 'installingtikui'}) Intalling Tikui
             +tikui-vertical-spacing--line
               +tikui-paragraph Take a few minutes to install Tikui. We will guide you step by step. You'll see, it's very easy to do.
         +tikui-vertical-spacing--line
           +tikui-vertical-spacing(16)
             +tikui-vertical-spacing--line
-              +tikui-title-part({selector: 'h3'}) Step 1: Install requirements
+              +tikui-title-part({selector: 'h3', id: 'installrequirements'}) Step 1: Install requirements
             +tikui-vertical-spacing--line
               +tikui-paragraph Make sure you have #[+tikui-link('https://nodejs.org/') Node.js] installed before setting up Tikui.
             +tikui-vertical-spacing--line
@@ -41,7 +57,7 @@ block body
         +tikui-vertical-spacing--line
           +tikui-vertical-spacing(16)
             +tikui-vertical-spacing--line
-              +tikui-title-part({selector: 'h3'}) Step 2: Generate your pattern library
+              +tikui-title-part({selector: 'h3', id: 'generateyourpatternlibrary'}) Step 2: Generate your pattern library
             +tikui-vertical-spacing--line
               +tikui-paragraph The next command will generate #[strong my-pattern-library] folder with a Tikui installation:
             +tikui-vertical-spacing--line
@@ -49,7 +65,7 @@ block body
         +tikui-vertical-spacing--line
           +tikui-vertical-spacing(16)
             +tikui-vertical-spacing--line
-              +tikui-title-part({selector: 'h3'}) Step 3: Install dependencies
+              +tikui-title-part({selector: 'h3', id: 'installdependencies'}) Step 3: Install dependencies
             +tikui-vertical-spacing--line
               +tikui-paragraph Go to the root folder and install:
             +tikui-vertical-spacing--line
@@ -59,7 +75,7 @@ block body
         +tikui-vertical-spacing--line
           +tikui-vertical-spacing(16)
             +tikui-vertical-spacing--line
-              +tikui-title-part({selector: 'h3'}) Step 4: Serve and code
+              +tikui-title-part({selector: 'h3', id: 'serveandcode'}) Step 4: Serve and code
             +tikui-vertical-spacing--line
               +tikui-paragraph While you're coding, run the application locally on #[strong localhost:3000].
             +tikui-vertical-spacing--line
@@ -69,7 +85,7 @@ block body
         +tikui-vertical-spacing--line
           +tikui-vertical-spacing(16)
             +tikui-vertical-spacing--line
-              +tikui-title-part({selector: 'h3'}) Step 5: Build
+              +tikui-title-part({selector: 'h3', id: 'build'}) Step 5: Build
             +tikui-vertical-spacing--line
               +tikui-paragraph After you add your styles, you may need to build your assets statically using:
             +tikui-vertical-spacing--line

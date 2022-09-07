@@ -1,0 +1,17 @@
+include /atom/nav-item/nav-item.mixin.pug
+
+include nav-vertical.mixin.pug
+
++tikui-nav-vertical
+  +tikui-nav-vertical--item(1)
+    +tikui-nav-item({main: true}) Level one
+  +tikui-nav-vertical--item(2)
+    +tikui-nav-item({selected: true}) Level two
+  +tikui-nav-vertical--item(3)
+    +tikui-nav-item Level three
+  +tikui-nav-vertical--item(4)
+    +tikui-nav-item Level four
+  +tikui-nav-vertical--item(5)
+    +tikui-nav-item Level five
+  +tikui-nav-vertical--item(6)
+    +tikui-nav-item Level six

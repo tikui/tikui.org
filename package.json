@@ -36,11 +36,11 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@tikui/core": "^2.0.0",
-    "tikuidoc-tikui": "^4.0.0"
+    "@tikui/core": "^3.0.0",
+    "tikuidoc-tikui": "^5.0.0"
   },
   "devDependencies": {
-    "husky": "^7.0.2",
+    "husky": "^8.0.1",
     "pug-lint": "^2.6.0"
   },
   "engines": {
