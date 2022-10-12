@@ -3,7 +3,7 @@ include /organism/header/header.mixin.pug
 include /template/template-page/template-page.mixin.pug
 
 mixin tikui-page-navigation-slot(page, current)
-  -const options = current === page ? {selected: true} : {href: page};
+  -const options = current === page ? {selected: true} : {href: `[[TIKUI_BASEPATH]]${page}`};
   +tikui-header-navigation--slot(options)
     block
 
@@ -18,10 +18,10 @@ mixin tikui-page(current, options)
               +tikui-logo
           +tikui-header--slot({expand: true})
             +tikui-header-navigation
-              +tikui-page-navigation-slot('[[TIKUI_BASEPATH]]index.html', current) Home
-              +tikui-page-navigation-slot('[[TIKUI_BASEPATH]]doc.html', current) Documentation
-              +tikui-page-navigation-slot('[[TIKUI_BASEPATH]]get-started.html', current) Get started
-              +tikui-page-navigation-slot('[[TIKUI_BASEPATH]]about.html', current) About
+              +tikui-page-navigation-slot('index.html', current) Home
+              +tikui-page-navigation-slot('doc.html', current) Documentation
+              +tikui-page-navigation-slot('get-started.html', current) Get started
+              +tikui-page-navigation-slot('about.html', current) About
           +tikui-header--slot
             a(href=GITHUB title='Fork me on GitHub')
               img(src='[[TIKUI_BASEPATH]]assets/github.svg' width=35 height=30 alt='GitHub logo')
