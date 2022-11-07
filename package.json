@@ -36,7 +36,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@tikui/core": "^3.0.1",
+    "@tikui/core": "^4.0.0",
     "tikuidoc-tikui": "^5.0.1"
   },
   "devDependencies": {
@@ -44,7 +44,7 @@
     "pug-lint": "^2.6.0"
   },
   "engines": {
-    "node": ">=14.17.5",
-    "npm": ">=6.14.14"
+    "node": ">=18.12.0",
+    "npm": ">=8.19.2"
   }
 }
