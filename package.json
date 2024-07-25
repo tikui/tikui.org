@@ -10,7 +10,7 @@
   ],
   "homepage": "https://www.tikui.org",
   "bugs": {
-    "url": "https://github.com/tikui/tikui.org/issues"
+    "url": "https://gitlab.com/tikui/tikui.org/-/issues"
   },
   "license": "MIT",
   "author": {
@@ -28,20 +28,20 @@
     }
   ],
   "main": "src/index.pug",
-  "repository": "github:tikui/tikui.org",
+  "repository": "gitlab:tikui/tikui.org",
   "scripts": {
     "serve": "tikui-core serve",
     "build": "tikui-core build",
     "lint": "pug-lint src",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
-    "@tikui/core": "^4.0.0",
-    "tikuidoc-tikui": "^5.0.1"
+    "@tikui/core": "^5.0.0",
+    "tikuidoc-tikui": "^6.0.0"
   },
   "devDependencies": {
-    "husky": "^8.0.1",
-    "pug-lint": "^2.6.0"
+    "husky": "^9.1.2",
+    "pug-lint": "^2.7.0"
   },
   "engines": {
     "node": ">=18.12.0",
