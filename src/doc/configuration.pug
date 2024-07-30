@@ -1,0 +1,94 @@
+extends /layout-doc
+
+include /prism.mixin.pug
+
+include /atom/link/link.mixin.pug
+include /atom/paragraph/paragraph.mixin.pug
+include /atom/title/title-main/title-main.mixin.pug
+include /atom/title/title-section/title-section.mixin.pug
+include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
+
+mixin tikui-config(options)
+  -const {field, def} = options;
+  -const escapeDefault = JSON.stringify(def);
+  +tikui-vertical-spacing(16)
+    +tikui-vertical-spacing--line
+      +tikui-title-section({selector: 'h2'})=field
+    +tikui-vertical-spacing--line
+      block
+    +tikui-vertical-spacing--line
+      +tikui-paragraph #[strong Default:] #[code=escapeDefault]
+    +tikui-vertical-spacing--line
+      +prism('json').
+        {
+          "#{field}": #{escapeDefault}
+        }
+
+block content
+  +tikui-vertical-spacing(32)
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(24)
+        +tikui-vertical-spacing--line
+          +tikui-title-main({selector: 'h1'}) Configuration
+        +tikui-vertical-spacing--line
+          +tikui-vertical-spacing(16)
+            +tikui-vertical-spacing--line
+              +tikui-paragraph In the root of your project, you can find (or add) a file #[strong tikuiconfig.json].
+            +tikui-vertical-spacing--line
+              +tikui-paragraph If the project is generated using #[+tikui-link('https://github.com/tikui/tikui-cli') tikui-cli], the file may looks like:
+            +tikui-vertical-spacing--line
+              +prism('json').
+                {
+                  "documentation": "tikui"
+                }
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(16)
+        +tikui-vertical-spacing--line
+          +tikui-title-section({selector: 'h2'}) documentation
+        +tikui-vertical-spacing--line
+          +tikui-paragraph The #[code documentation] field is mandatory and load the #[strong documentation theme] of your #[strong Pattern Library].
+        +tikui-vertical-spacing--line
+          +tikui-paragraph You also need to install the documentation module (here #[+tikui-link('https://github.com/tikui/tikuidoc-tikui') tikuidoc-tikui]) with:
+        +tikui-vertical-spacing--line
+          +prism('bash') npm i tikuidoc-tikui
+        +tikui-vertical-spacing--line
+          +tikui-paragraph To create your own theme module, you need to make a new node package with a name like #[code tikuidoc-{name}] where #[strong {name}] is your theme name.
+        +tikui-vertical-spacing--line
+          +tikui-paragraph Then publish it, add to your dependencies and put the #[strong {name}] as a value in the #[strong documentation] field.
+    +tikui-vertical-spacing--line
+      +tikui-config({field: 'cache', def: '.tikui-cache'})
+        +tikui-paragraph The cache directory used for Tikui when you launch it with #[code npm run serve].
+    +tikui-vertical-spacing--line
+      +tikui-config({field: 'dist', def: 'dist'})
+        +tikui-paragraph The generated (dist) folder location.
+    +tikui-vertical-spacing--line
+      +tikui-config({field: 'expose', def: {}})
+        +tikui-vertical-spacing(16)
+          +tikui-vertical-spacing--line
+            +tikui-paragraph This #[em field] let you expose something from a directory or a file to a specific route.
+          +tikui-vertical-spacing--line
+            +tikui-paragraph The structure:
+          +tikui-vertical-spacing--line
+            +prism('typescript') #{'Record<string, string>;'}
+          +tikui-vertical-spacing--line
+            +tikui-paragraph Example:
+          +tikui-vertical-spacing--line
+            +prism('json').
+              {
+                "node_modules/some-module/dist": "some-module"
+              }
+          +tikui-vertical-spacing--line
+            +tikui-paragraph
+              em #[strong node_modules/some-module/dist] content will be exposed under #[strong some-module] path (copied in build mode).
+    +tikui-vertical-spacing--line
+      +tikui-config({field: 'port', def: 3000})
+        +tikui-paragraph This is the port used for Tikui when you launch it with #[code npm run serve].
+    +tikui-vertical-spacing--line
+      +tikui-config({field: 'reloadPort', def: 3030})
+        +tikui-paragraph This is the port used for Tikui to reload your page when you launch it with #[code npm run serve].
+    +tikui-vertical-spacing--line
+      +tikui-config({field: 'src', def: 'src'})
+        +tikui-paragraph The source folder location.
+    +tikui-vertical-spacing--line
+      +tikui-config({field: 'verbose', def: 'false'})
+        +tikui-paragraph Enable verbosity to show more messages in the console.

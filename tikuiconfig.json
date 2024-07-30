@@ -1,6 +1,7 @@
 {
   "documentation": "tikui",
   "expose": {
+    "node_modules/prismjs/prism.js": "prism/prism.js",
     "node_modules/prismjs/themes": "prism/themes",
     "node_modules/prismjs/components": "prism/components",
     "node_modules/prismjs/plugins": "prism/plugins",

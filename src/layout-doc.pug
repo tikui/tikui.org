@@ -1,0 +1,18 @@
+extends /layout
+
+include /page.mixin.pug
+
+include /atom/nav-item/nav-item.mixin.pug
+include /molecule/nav-vertical/nav-vertical.mixin.pug
+include /template/template-page/template-page.mixin.pug
+
+block body
+  +tikui-page('doc.html')
+    +tikui-template-page--nav
+      +tikui-nav-vertical
+        +tikui-nav-vertical--item(1)
+          +tikui-nav-item({main: true, href: '[[TIKUI_BASEPATH]]doc.html#installingtikui'}) Documentation
+        +tikui-nav-vertical--item(2)
+          +tikui-nav-item({ href: '[[TIKUI_BASEPATH]]doc/configuration.html'}) Configuration
+    +tikui-template-page--container
+      block content

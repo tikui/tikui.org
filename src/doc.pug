@@ -1,35 +1,30 @@
-extends /layout
-
-include /page.mixin.pug
+extends /layout-doc
 
 include /atom/link/link.mixin.pug
 include /atom/paragraph/paragraph.mixin.pug
 include /atom/title/title-main/title-main.mixin.pug
 include /atom/title/title-section/title-section.mixin.pug
 include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
-include /template/template-page/template-page.mixin.pug
 
-block body
-  +tikui-page('doc.html')
-    +tikui-template-page--container
-      +tikui-vertical-spacing(32)
+block content
+  +tikui-vertical-spacing(32)
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(24)
         +tikui-vertical-spacing--line
-          +tikui-vertical-spacing(24)
-            +tikui-vertical-spacing--line
-              +tikui-title-main({selector: 'h1'}) Documentation
-            +tikui-vertical-spacing--line
-              +tikui-paragraph The documentation is not ready yet, you can make propositions from GitLab #[+tikui-link('https://gitlab.com/tikui/tikui.org/-/merge_requests') merge requests] and #[+tikui-link('https://gitlab.com/tikui/tikui.org/-/issues') issues].
+          +tikui-title-main({selector: 'h1'}) Documentation
         +tikui-vertical-spacing--line
-          +tikui-vertical-spacing(16)
-            +tikui-vertical-spacing--line
-              +tikui-title-section({selector: 'h2'}) Get started
-            +tikui-vertical-spacing--line
-              +tikui-paragraph You can install Tikui using the #[+tikui-link('[[TIKUI_BASEPATH]]get-started.html') Get Started].
-            +tikui-vertical-spacing--line
-              +tikui-title-section({selector: 'h2'}) Example
-            +tikui-vertical-spacing--line
-              +tikui-paragraph #[strong Tikui.org] is built on top of #[strong Tikui], you can use the #[+tikui-link('[[TIKUI_BASEPATH]]documentation.html') documentation] to have an idea on how to use it.
-            +tikui-vertical-spacing--line
-              +tikui-title-section({selector: 'h2'}) Resources
-            +tikui-vertical-spacing--line
-              +tikui-paragraph You can follow our recommended #[+tikui-link('[[TIKUI_BASEPATH]]resources.html') resources] to improve your skills.
+          +tikui-paragraph The documentation only explains how to #[+tikui-link('[[TIKUI_BASEPATH]]doc/configuration.html') configure] your app, you can help us to improve it using GitLab #[+tikui-link('https://gitlab.com/tikui/tikui.org/-/merge_requests') merge requests] and #[+tikui-link('https://gitlab.com/tikui/tikui.org/-/issues') issues].
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(16)
+        +tikui-vertical-spacing--line
+          +tikui-title-section({selector: 'h2'}) Get started
+        +tikui-vertical-spacing--line
+          +tikui-paragraph You can install Tikui using the #[+tikui-link('[[TIKUI_BASEPATH]]get-started.html') Get Started].
+        +tikui-vertical-spacing--line
+          +tikui-title-section({selector: 'h2'}) Example
+        +tikui-vertical-spacing--line
+          +tikui-paragraph #[strong Tikui.org] is built on top of #[strong Tikui], you can use the #[+tikui-link('[[TIKUI_BASEPATH]]documentation.html') documentation] to have an idea on how to use it.
+        +tikui-vertical-spacing--line
+          +tikui-title-section({selector: 'h2'}) Resources
+        +tikui-vertical-spacing--line
+          +tikui-paragraph You can follow our recommended #[+tikui-link('[[TIKUI_BASEPATH]]resources.html') resources] to improve your skills.
