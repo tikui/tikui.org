@@ -3,8 +3,7 @@ include /organism/header/header.mixin.pug
 include /template/template-page/template-page.mixin.pug
 
 mixin tikui-page-navigation-slot(page, current)
-  -const options = current === page ? {selected: true} : {href: `[[TIKUI_BASEPATH]]${page}`};
-  +tikui-header-navigation--slot(options)
+  +tikui-header-navigation--slot({selected: current === page, href: `[[TIKUI_BASEPATH]]${page}`})
     block
 
 mixin tikui-page(current, options)
