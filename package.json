@@ -36,7 +36,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@tikui/core": "^5.0.0",
+    "@tikui/core": "^6.0.0",
     "tikuidoc-tikui": "^6.0.0"
   },
   "devDependencies": {
