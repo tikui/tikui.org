@@ -10,11 +10,11 @@ include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
 include /template/template-page/template-page.mixin.pug
 
 block body
-  +tikui-page('about.html')
+  +tikui-page('legal.html')
     +tikui-template-page--container
       +tikui-vertical-spacing(32)
         +tikui-vertical-spacing--line
-          +tikui-title-main({selector: 'h1'}) About
+          +tikui-title-main({selector: 'h1'}) Legal
         +tikui-vertical-spacing--line
           +tikui-vertical-spacing(16)
             +tikui-vertical-spacing--line
@@ -26,4 +26,4 @@ block body
             +tikui-vertical-spacing--line
               +tikui-paragraph This website is hosted by GitLab using pages, all information about the hosting are on their #[+tikui-link('https://about.gitlab.com/fr-fr/mentions-legales/') website].
             +tikui-vertical-spacing--line
-              +tikui-paragraph The domain is hosted by OVH, all information about the hosting are on their #[+tikui-link('https://www.ovh.com/fr/support/mentions-legales/') website].
+              +tikui-paragraph The domain is hosted by Squarespace, all information about the hosting are on their #[+tikui-link('https://fr.squarespace.com/mentions-legales') website].
