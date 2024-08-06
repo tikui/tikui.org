@@ -14,9 +14,14 @@ mixin tikui-template-page--content
   .tikui-template-page--content
     block
 
+mixin tikui-template-page--header-container
+  .tikui-template-page--header-container
+    block
+
 mixin tikui-template-page--container
   .tikui-template-page--container
-    block
+    .tikui-template-page--container-content
+      block
 
 mixin tikui-template-page(options)
   -const {atomized} = options || {};

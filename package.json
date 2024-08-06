@@ -35,13 +35,11 @@
     "lint": "pug-lint src",
     "prepare": "husky"
   },
-  "dependencies": {
-    "@tikui/core": "^6.0.0",
-    "tikuidoc-tikui": "^6.0.0"
-  },
   "devDependencies": {
-    "husky": "^9.1.2",
-    "pug-lint": "^2.7.0"
+    "@tikui/core": "6.1.0",
+    "tikuidoc-tikui": "7.0.0",
+    "husky": "9.1.4",
+    "pug-lint": "2.7.0"
   },
   "engines": {
     "node": ">=18.12.0",
