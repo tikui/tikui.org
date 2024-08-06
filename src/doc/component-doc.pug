@@ -1,0 +1,104 @@
+extends /layout-doc
+
+include /prism.mixin.pug
+
+include /atom/link/link.mixin.pug
+include /atom/paragraph/paragraph.mixin.pug
+include /atom/title/title-main/title-main.mixin.pug
+include /atom/title/title-section/title-section.mixin.pug
+include /atom/title/title-part/title-part.mixin.pug
+include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
+
+block content
+  +tikui-vertical-spacing(32)
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(24)
+        +tikui-vertical-spacing--line
+          +tikui-title-main({selector: 'h1'}) Component documentation
+        +tikui-vertical-spacing--line
+          +tikui-paragraph The component should respect the #[+tikui-link('#structure') structure] of a component.
+        +tikui-vertical-spacing--line
+          +tikui-paragraph A documentation area contains a description, the render and a code area.
+        +tikui-vertical-spacing--line
+          +tikui-paragraph There are two kinds of documentation area: #[+tikui-link('#componentDoc') componentDoc] and #[+tikui-link('#templateDoc') templateDoc].
+        +tikui-vertical-spacing--line
+          +tikui-paragraph It's possible to generates a component using #[+tikui-link('https://github.com/tikui/tikui-cli') @tikui/cli] with #[code tikui create …].
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(16)
+        +tikui-vertical-spacing--line
+          +tikui-title-section({selector: 'h2', id: 'structure'}) Structure
+        +tikui-vertical-spacing--line
+          +tikui-paragraph The structure of a component (#[strong {NAME}] is the component name) looks like this:
+        +tikui-vertical-spacing--line
+          +prism.
+            {NAME}/
+              {NAME}.md
+              {NAME}.code.pug
+              {NAME}.render.pug
+        +tikui-vertical-spacing--line
+          +tikui-paragraph For a #[strong button] it looks like:
+        +tikui-vertical-spacing--line
+          +prism.
+            button/
+              button.md
+              button.code.pug
+              button.render.pug
+        +tikui-vertical-spacing--line
+          +tikui-paragraph The #[strong button.md] file contains a markdown to propose a textual documentation of the #[strong button].
+        +tikui-vertical-spacing--line
+          +tikui-paragraph The #[strong button.code.pug] file contains the code used to show the #[strong button].
+        +tikui-vertical-spacing--line
+          +tikui-paragraph The #[strong button.render.pug] file is used to render the #[strong button].
+        +tikui-vertical-spacing--line
+          +tikui-vertical-spacing(16)
+            +tikui-vertical-spacing--line
+              +tikui-title-part({selector: 'h3'}) Common practices
+            +tikui-vertical-spacing--line
+              +tikui-paragraph In addition of the standard structure, it's relevant to add the #[strong style] file near to the #[strong component] files. It's also a good idea to make a #[strong mixin] file to use the component in multiple parts of the documentation:
+            +tikui-vertical-spacing--line
+              +prism.
+                {NAME}/
+                  _{NAME}.scss
+                  …
+                  {NAME}.mixin.pug
+                  …
+            +tikui-vertical-spacing--line
+              +tikui-paragraph At the end, a #[strong button] component will looks like:
+            +tikui-vertical-spacing--line
+              +prism.
+                button/
+                  _button.scss
+                  button.md
+                  button.code.pug
+                  button.mixin.pug
+                  button.render.pug
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(16)
+        +tikui-vertical-spacing--line
+          +tikui-title-section({selector: 'h2', id: 'componentDoc'}) componentDoc
+        +tikui-vertical-spacing--line
+          +prism('pug').
+            include:componentDoc(height={HEIGHT}) {PATH}.md
+        +tikui-vertical-spacing--line
+          +tikui-paragraph The #[strong {PATH}] is the link of the component, it's important to reference the markdown file to import the other part of the component.
+        +tikui-vertical-spacing--line
+          +tikui-paragraph The #[strong {HEIGHT}] is optional and it's the pixel size of the render height.
+        +tikui-vertical-spacing--line
+          +tikui-paragraph Example with a #[strong button] atom and #[strong 42px] of render #[strong height]:
+        +tikui-vertical-spacing--line
+          +prism('pug').
+            include:componentDoc(height=42) button/button.md
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(16)
+        +tikui-vertical-spacing--line
+          +tikui-title-section({selector: 'h2', id: 'templateDoc'}) templateDoc
+        +tikui-vertical-spacing--line
+          +prism('pug').
+            include:templateDoc {PATH}.md
+        +tikui-vertical-spacing--line
+          +tikui-paragraph The #[strong {PATH}] is the link of the component, it's important to reference the markdown file to import the other part of the component.
+        +tikui-vertical-spacing--line
+          +tikui-paragraph Example with a #[strong template-page] template:
+        +tikui-vertical-spacing--line
+          +prism('pug').
+            include:templateDoc template-page/template-page.md
