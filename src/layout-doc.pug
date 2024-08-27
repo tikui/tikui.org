@@ -6,15 +6,19 @@ include /atom/nav-item/nav-item.mixin.pug
 include /molecule/nav-vertical/nav-vertical.mixin.pug
 include /template/template-page/template-page.mixin.pug
 
+mixin tikui-nav-doc-item(name)
+  +tikui-nav-vertical--item(2)
+    +tikui-nav-item({href: `[[TIKUI_BASEPATH]]doc/${name}.html`})
+      block
+
 block body
   +tikui-page('doc.html')
     +tikui-template-page--nav
       +tikui-nav-vertical
         +tikui-nav-vertical--item(1)
           +tikui-nav-item({main: true, href: '[[TIKUI_BASEPATH]]doc.html#installingtikui'}) Documentation
-        +tikui-nav-vertical--item(2)
-          +tikui-nav-item({ href: '[[TIKUI_BASEPATH]]doc/configuration.html'}) Configuration
-        +tikui-nav-vertical--item(2)
-          +tikui-nav-item({ href: '[[TIKUI_BASEPATH]]doc/component-doc.html'}) Component documentation
+        +tikui-nav-doc-item('configuration') Configuration
+        +tikui-nav-doc-item('cli') Command Line Interface (CLI)
+        +tikui-nav-doc-item('component-doc') Component documentation
     +tikui-template-page--container
       block content

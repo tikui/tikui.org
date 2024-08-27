@@ -1,0 +1,63 @@
+extends /layout-doc
+
+include /prism.mixin.pug
+
+include /atom/paragraph/paragraph.mixin.pug
+include /atom/title/title-main/title-main.mixin.pug
+include /atom/title/title-section/title-section.mixin.pug
+include /organism/spacing/vertical-spacing/vertical-spacing.mixin.pug
+
+mixin tikui-cli(name, options)
+  -const {args, description} = options || {};
+  -const command = ['tikui', name, args].filter(String).join(' ');
+  +tikui-vertical-spacing--line
+    +tikui-title-section({selector: 'h2', id: name})=name
+  +tikui-vertical-spacing--line
+    +tikui-paragraph=description
+  +tikui-vertical-spacing--line
+    +tikui-paragraph
+      strong Example:
+  +tikui-vertical-spacing--line
+    +prism('bash')=command
+  block
+
+block content
+  +tikui-vertical-spacing(32)
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(24)
+        +tikui-vertical-spacing--line
+          +tikui-title-main({selector: 'h1'}) Command Line Interface (CLI)
+        +tikui-vertical-spacing--line
+          +tikui-paragraph The #[code tikui] command line helps you to generate component documentation. It's also useful to generate an entire #[strong Tikui Pattern Library].
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(16)
+        +tikui-vertical-spacing--line
+          +tikui-title-section({selector: 'h2', id: 'installation'}) Installation
+        +tikui-vertical-spacing--line
+          +tikui-paragraph First of all, you need to install #[code @tikui/cli]
+        +tikui-vertical-spacing--line
+          +prism('bash') npm i -g @tikui/cli
+        +tikui-vertical-spacing--line
+          +tikui-paragraph Now you'll be able to use #[code tikui] command.
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(16)
+        +tikui-cli('help', {description: 'Show you a help message with all the available commands.'})
+          +tikui-vertical-spacing--line
+            +tikui-paragraph You can also use #[code help] on a #[strong command], for example:
+          +tikui-vertical-spacing--line
+            +prism('bash') tikui help generate
+          +tikui-vertical-spacing--line
+            +tikui-paragraph Because #[code @tikui/cli] can change independently of the documentation, we encourage you to use the #[code help] command to have the most up-to-date information.
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(16)
+        +tikui-cli('generate', {description: 'Generate an entire Tikui Pattern Library.', args: 'pl'})
+          +tikui-vertical-spacing--line
+            +tikui-paragraph Here directory #[code pl] will be generated as a Tikui Pattern Library.
+          +tikui-vertical-spacing--line
+            +tikui-paragraph You may need to launch:
+          +tikui-vertical-spacing--line
+            +prism('bash').
+              cd pl
+              npm i
+          +tikui-vertical-spacing--line
+            +tikui-paragraph To install your Pattern Library.
