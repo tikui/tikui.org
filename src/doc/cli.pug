@@ -2,6 +2,7 @@ extends /layout-doc
 
 include /prism.mixin.pug
 
+include /atom/link/link.mixin.pug
 include /atom/paragraph/paragraph.mixin.pug
 include /atom/title/title-main/title-main.mixin.pug
 include /atom/title/title-section/title-section.mixin.pug
@@ -61,3 +62,14 @@ block content
               npm i
           +tikui-vertical-spacing--line
             +tikui-paragraph To install your Pattern Library.
+    +tikui-vertical-spacing--line
+      +tikui-vertical-spacing(16)
+        +tikui-cli('create', {description: 'Create a new documented component.', args: 'button src/atom'})
+          +tikui-vertical-spacing--line
+            +tikui-paragraph Here component and documentation files for #[code button] will be created under #[code src/atom].
+          +tikui-vertical-spacing--line
+            +tikui-paragraph You're now able to link style using #[code @use 'button/button'] from a parent #[code SCSS] file.
+          +tikui-vertical-spacing--line
+            +tikui-paragraph You're also able to link documentation using #[code include:componentDoc button/button.md] from a parent #[code pug] file.
+          +tikui-vertical-spacing--line
+            +tikui-paragraph You can learn more about the component structure in the #[+tikui-link('[[TIKUI_BASEPATH]]doc/component-doc.html#componentDoc') component documentation].
