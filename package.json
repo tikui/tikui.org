@@ -36,7 +36,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@tikui/core": "6.2.0",
+    "@tikui/core": "6.2.1",
     "tikuidoc-tikui": "8.0.0",
     "husky": "9.1.6",
     "pug-lint": "2.7.0"
